@@ -6,7 +6,7 @@ public class SmoothTransition : MonoBehaviour
 {
 
     [SerializeField] public Transform CopyJoint;
-    [SerializeField] public float speed = 1.0f;
+    [SerializeField] public float speed = 5.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +17,7 @@ public class SmoothTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var targetRotation = CopyJoint.rotation;
-
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, CopyJoint.localRotation, speed * Time.deltaTime);
+        transform.localPosition = Vector3.Slerp(transform.localPosition, CopyJoint.localPosition, speed * Time.deltaTime);
     }
 }
