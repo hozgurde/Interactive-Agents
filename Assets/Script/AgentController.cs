@@ -8,6 +8,8 @@ public enum LinesFor { LeftHand, RightHand, None, Null };
 
 public class AgentController : MonoBehaviour {
 
+    [SerializeField] public GameObject ShownAgent;
+
     public int le_state_out;
 
     public float mult_top = 1f;
@@ -283,11 +285,11 @@ public class AgentController : MonoBehaviour {
         footDiff_right = new Vector3(0, footDiff_right.y, 0);
 
         // face script part
-        GameObject body = GetChildGameObject(gameObject, "Body");
-        GameObject body_default = GetChildGameObject(gameObject, "default");
-        GameObject body_eyelashes = GetChildGameObject(gameObject, "Eyelashes");
-        GameObject body_beards = GetChildGameObject(gameObject, "Beards");
-        GameObject body_moustaches = GetChildGameObject(gameObject, "Moustaches");
+        GameObject body = GetChildGameObject(ShownAgent, "Body");
+        GameObject body_default = GetChildGameObject(ShownAgent, "default");
+        GameObject body_eyelashes = GetChildGameObject(ShownAgent, "Eyelashes");
+        GameObject body_beards = GetChildGameObject(ShownAgent, "Beards");
+        GameObject body_moustaches = GetChildGameObject(ShownAgent, "Moustaches");
 
         faceController = body.AddComponent<FaceScript>();
 
