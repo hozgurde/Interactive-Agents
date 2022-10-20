@@ -14,14 +14,14 @@ AnimatorTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 1
---- !u!1102 &-3463748601022292697
+--- !u!1102 &-5326650120092289481
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: audio_test_label_001_Neutral_0_x_1_0|audio_test_label_001_Neutral_0_x_1_0
+  m_Name: audio_test_label_005_Neutral_4_x_1_0|audio_test_label_005_Neutral_4_x_1_0
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -34,7 +34,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -144031553794141027, guid: 1dc1cf0c52498b04488c54f0699ac2b1,
+  m_Motion: {fileID: 3401510801488978175, guid: 1dc1cf0c52498b04488c54f0699ac2b1,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -51,7 +51,7 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -3463748601022292697}
+    m_State: {fileID: -5326650120092289481}
     m_Position: {x: 360, y: 170, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
@@ -62,7 +62,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 80, y: 130, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -3463748601022292697}
+  m_DefaultState: {fileID: -5326650120092289481}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
