@@ -35,8 +35,6 @@ public class BVHAnimationLoader : MonoBehaviour {
     public Animation anim;
     [Tooltip("This field can be used to read out the the animation clip after being loaded. A new clip will always be created when loading.")]
     public AnimationClip clip;
-    [Tooltip("Make True If in Interactive Agent Procejt.")]
-    public bool inInteractiveAgent = false;
 
     static private int clipCount = 0;
     private BVHParser bp = null;
@@ -47,8 +45,6 @@ public class BVHAnimationLoader : MonoBehaviour {
     private Dictionary<string, string[]> boneToMuscles;
     private Dictionary<string, Transform> nameMap;
     private Dictionary<string, string> renamingMap;
-
-    private bool isException;
 
     [Serializable]
     public struct FakeDictionary {
@@ -106,18 +102,6 @@ public class BVHAnimationLoader : MonoBehaviour {
         throw new InvalidOperationException("Could not find bone \"" + name + "\" under bone \"" + transform.name + "\".");
     }
 
-    //****************************************************************************************
-
-    //This Code Block Is Added For BVH check Specifically for this project
-
-    Keyframe[][] spineKeyframes = new Keyframe[7][];
-    Keyframe[][] spine1Keyframes = new Keyframe[7][];
-    Keyframe[][] spine2Keyframes = new Keyframe[7][];
-    Keyframe[][] spine3Keyframes = new Keyframe[7][];
-
-    //****************************************************************************************
-
-
     private void getCurves(string path, BVHParser.BVHBone node, Transform bone, bool first) {
         bool posX = false;
         bool posY = false;
@@ -126,43 +110,8 @@ public class BVHAnimationLoader : MonoBehaviour {
         bool rotY = false;
         bool rotZ = false;
 
-        //Hozgurde: Added Exception bool to control if function is in exceptional node
-        isException = false;
-
-        //Hozgurde: Exceptional Cases
-        if(node.name == "Spine0" ||
-            node.name == "Spine1" ||
-            node.name == "Spine2" || 
-            node.name == "Spine3")
-        {
-            isException = true;
-        }
-
         float[][] values = new float[6][];
         Keyframe[][] keyframes = new Keyframe[7][];
-
-        if (isException)
-        {
-            if (node.name == "Spine0")
-            {
-                keyframes = spineKeyframes;
-            }
-            else if (node.name == "Spine1")
-            {
-                keyframes = spine1Keyframes;
-            }
-            else if (node.name == "Spine2")
-            {
-                keyframes = spine2Keyframes;
-            }
-            else if (node.name == "Spine3")
-            {
-                keyframes = spine3Keyframes;
-            }
-        }
-       
-
-
         string[] props = new string[7];
         Transform nodeTransform = getBoneByName(node.name, bone, first);
 
@@ -464,6 +413,28 @@ public class BVHAnimationLoader : MonoBehaviour {
         if (autoStart) {
             autoPlay = true;
             parseFile();
+            
+            //*******************************
+            MyBVHTool myTool = new MyBVHTool(bp);
+            myTool.InsertNames("mixamorig:", bp.root);
+            myTool.MergeBone("mixamorig:Spine1", bp.root);
+            myTool.ChangeName("mixamorig:Spine2", "mixamorig:Spine1", bp.root);
+            myTool.ChangeName("mixamorig:Spine3", "mixamorig:Spine2", bp.root);
+            myTool.MergeBone("mixamorig:Neck1", bp.root);
+            myTool.DeleteBone("mixamorig:HeadEnd", bp.root);
+            myTool.DeleteBone("mixamorig:RightForeArmEnd", bp.root); 
+            myTool.DeleteBone("mixamorig:RightArmEnd", bp.root); 
+            myTool.DeleteBone("mixamorig:LeftForeArmEnd", bp.root); 
+            myTool.DeleteBone("mixamorig:LeftArmEnd", bp.root); 
+            myTool.DeleteBone("mixamorig:RightToeBaseEnd", bp.root); 
+            myTool.DeleteBone("mixamorig:RightLegEnd", bp.root); 
+            myTool.DeleteBone("mixamorig:RightUpLegEnd", bp.root);
+            myTool.DeleteBone("mixamorig:LeftToeBaseEnd", bp.root);
+            myTool.DeleteBone("mixamorig:LeftLegEnd", bp.root);
+            myTool.DeleteBone("mixamorig:LeftUpLegEnd", bp.root);
+            myTool.PrintBVH("", bp.root);
+            //*******************************
+
             loadAnimation();
         }
     }
