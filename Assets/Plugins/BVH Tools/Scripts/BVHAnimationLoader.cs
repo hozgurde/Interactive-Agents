@@ -54,6 +54,7 @@ public class BVHAnimationLoader : MonoBehaviour {
 
     // BVH to Unity
     private Quaternion fromEulerZXY(Vector3 euler) {
+        //return Quaternion.AngleAxis(euler.y, Vector3.up)  * Quaternion.AngleAxis(euler.x, Vector3.right) * Quaternion.AngleAxis(euler.z, Vector3.forward);
         return Quaternion.AngleAxis(euler.z, Vector3.forward) * Quaternion.AngleAxis(euler.x, Vector3.right) * Quaternion.AngleAxis(euler.y, Vector3.up);
     }
 
@@ -212,6 +213,11 @@ public class BVHAnimationLoader : MonoBehaviour {
             Quaternion oldRotation = bone.transform.rotation;
             for (int i = 0; i < frames; i++) {
                 Vector3 eulerBVH = new Vector3(wrapAngle(values[3][i]), wrapAngle(values[4][i]), wrapAngle(values[5][i]));
+                if(i == 0)
+                {
+                    Debug.Log(node.name + " in load anim: " + eulerBVH.ToString());
+                }
+                
                 Quaternion rot = fromEulerZXY(eulerBVH);
                 if (blender) {
                     keyframes[3][i].value = rot.x;
@@ -432,6 +438,22 @@ public class BVHAnimationLoader : MonoBehaviour {
             myTool.DeleteBone("mixamorig:LeftToeBaseEnd", bp.root);
             myTool.DeleteBone("mixamorig:LeftLegEnd", bp.root);
             myTool.DeleteBone("mixamorig:LeftUpLegEnd", bp.root);
+            myTool.ScaleRoot( bp.root);
+
+            myTool.RotateBone(myTool.FindBone("mixamorig:Hips", bp.root), 8, -6, 0);
+            myTool.RotateBone(myTool.FindBone("mixamorig:LeftUpLeg", bp.root), -16, -3, 177);
+            myTool.RotateBone(myTool.FindBone("mixamorig:RightUpLeg", bp.root), -22, -9, -180);
+            /*myTool.RotateBone(myTool.FindBone("mixamorig:Spine", bp.root), -1, 0, -1);
+            myTool.RotateBone(myTool.FindBone("mixamorig:Spine1", bp.root), -2, -2, 1);
+            myTool.RotateBone(myTool.FindBone("mixamorig:Spine2", bp.root), -1.5f, 1.5f, 0.25f);
+            myTool.RotateBone(myTool.FindBone("mixamorig:LeftShoulder", bp.root), 102, -70, -45);
+            myTool.RotateBone(myTool.FindBone("mixamorig:LeftArm", bp.root), 60, -27, -129);
+            myTool.RotateBone(myTool.FindBone("mixamorig:LeftForeArm", bp.root), -40, -6, -3);
+            myTool.RotateBone(myTool.FindBone("mixamorig:LeftHand", bp.root), 12, -48, 0.4f);
+            myTool.RotateBone(myTool.FindBone("mixamorig:RightShoulder", bp.root), 0, 0, 0);*/
+            
+            //myTool.RotateBone(myTool.FindBone("mixamorig:Neck", bp.root), 8, 4, 0);
+
             myTool.PrintBVH("", bp.root);
             //*******************************
 

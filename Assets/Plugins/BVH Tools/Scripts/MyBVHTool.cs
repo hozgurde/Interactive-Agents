@@ -125,4 +125,74 @@ public class MyBVHTool
             }
         }
     }
+
+    public void ScaleRoot(BVHParser.BVHBone root)
+    {
+        
+        root.offsetX /= 180f;
+        root.offsetY /= 180f;
+        root.offsetY += 0.05f;
+        root.offsetZ /= 180f;
+        Debug.Log(root.offsetX + ", " + root.offsetY + ", " + root.offsetZ);
+
+        for (int i = 0; i < bp.frames; i++)
+        {
+            if (root.channels[0].enabled)
+            {
+                root.channels[0].values[i] /= 180f;
+            }
+
+            if (root.channels[1].enabled)
+            {
+                root.channels[1].values[i] /= 180f;
+            }
+
+            if (root.channels[2].enabled)
+            {
+                root.channels[2].values[i] /= 180f;
+            }
+        }
+    }
+
+    public BVHParser.BVHBone FindBone(string name, BVHParser.BVHBone bone)
+    {
+        if( name.Equals(bone.name))
+        {
+            return bone;
+        }
+        foreach (var child in bone.children)
+        {
+            var tempbone = FindBone(name, child);
+            if(tempbone != null)
+            {
+                return tempbone;
+            }
+        }
+
+        return null;
+
+    }
+
+    public void RotateBone(BVHParser.BVHBone bone, float rotX, float rotY, float rotZ)
+    {
+
+        Debug.Log(bone.name + ": " + bone.channels[3].values[0] + ", " + bone.channels[4].values[0] + ", " + bone.channels[5].values[0]);
+        for (int i = 0; i < bp.frames; i++)
+        {
+            if (bone.channels[3].enabled)
+            {
+                bone.channels[3].values[i] += rotX;
+            }
+
+            if (bone.channels[4].enabled)
+            {
+                bone.channels[4].values[i] -= rotY;
+            }
+
+            if (bone.channels[5].enabled)
+            {
+                bone.channels[5].values[i] -= rotZ;
+            }
+        }
+    }
 }
