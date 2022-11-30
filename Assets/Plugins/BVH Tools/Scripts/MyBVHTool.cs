@@ -15,7 +15,6 @@ public class MyBVHTool
 
     public void PrintBVH(string space, BVHParser.BVHBone bone)
     {
-        Debug.Log(space + bone.name);
         foreach(var child in bone.children)
         {
             PrintBVH(space + "-", child);

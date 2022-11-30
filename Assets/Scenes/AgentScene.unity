@@ -1879,6 +1879,7 @@ MonoBehaviour:
   C_LookIK: 1
   C_LookShift: 0
   C_EmotionsOn: 1
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -1971,6 +1972,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -2277,6 +2299,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -2369,6 +2392,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -4078,6 +4122,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 1
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -4179,6 +4224,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -4395,6 +4461,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -4496,6 +4563,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -5350,6 +5438,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -5442,6 +5531,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -9160,6 +9270,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 1
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -9261,6 +9372,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -20364,6 +20496,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -20456,6 +20589,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -23325,6 +23479,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -23417,6 +23572,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -25541,6 +25717,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -25633,6 +25810,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -26062,6 +26260,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -26154,6 +26353,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -28896,7 +29116,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -28968,7 +29188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.176
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30091,6 +30311,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 1
+  C_AddGestures: 1
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -30192,6 +30413,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 1602415014}
+  TargetLeftHand: {fileID: 1127576231}
+  TargetRightElbow: {fileID: 1432031604}
+  TargetRightHand: {fileID: 301304986}
+  BVHLeftShoulder: {fileID: 2003170660}
+  BVHLeftElbow: {fileID: 194034510}
+  BVHLeftHand: {fileID: 1433187297}
+  BVHRightShoulder: {fileID: 413915249}
+  BVHRightElbow: {fileID: 894089816}
+  BVHRightHand: {fileID: 385612940}
+  ShoulderRotationX: 22.29
+  ShoulderRotationY: 14
+  ShoulderRotationZ: 4
+  HandRotationX: 23
+  HandRotationY: -20
+  HandRotationZ: -68
+  RefSpine: {fileID: 982881232}
+  RefSpine1: {fileID: 96464719}
+  RefSpine2: {fileID: 1304411612}
+  RefNeck: {fileID: 618048676}
+  RefHead: {fileID: 1580735834}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -30856,7 +31098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.03
+      value: -3.538
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -32665,6 +32907,7 @@ MonoBehaviour:
   C_LookIK: 1
   C_LookShift: 0
   C_EmotionsOn: 1
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -32757,6 +33000,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -35843,6 +36107,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -35935,6 +36200,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -36050,6 +36336,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -36151,6 +36438,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -39995,7 +40303,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895140670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b122ba923dc793548b2cd20e71a486e4, type: 3}
   m_Name: 
@@ -40030,7 +40338,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895140670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df85a639f2b05a24bb9a43b9f7f2fc08, type: 3}
   m_Name: 
@@ -40065,7 +40373,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895140670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f107010428d10bd4e8de61cd0ddf34a1, type: 3}
   m_Name: 
@@ -41636,6 +41944,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -41737,6 +42046,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -43566,6 +43896,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -43658,6 +43989,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -45088,6 +45440,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 1
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -45189,6 +45542,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -45911,6 +46285,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -46003,6 +46378,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -48522,6 +48918,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -48623,6 +49020,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -49977,7 +50395,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018186853}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03ca45bb53dc94f478358a1b6475653d, type: 3}
   m_Name: 
@@ -51990,7 +52408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 5.8790283, y: 447.36}
+  m_AnchoredPosition: {x: 5.8789062, y: 447.36}
   m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1066059444
@@ -58621,6 +59039,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -58713,6 +59132,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -60276,6 +60716,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -60377,6 +60818,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -61825,6 +62287,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 1
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -61926,6 +62389,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -64969,7 +65453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.572
+      value: -2.768
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -66439,6 +66923,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -66531,6 +67016,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -68259,7 +68765,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396299984}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03ca45bb53dc94f478358a1b6475653d, type: 3}
   m_Name: 
@@ -68446,6 +68952,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -68538,6 +69045,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -74695,6 +75223,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -74796,6 +75325,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -79778,6 +80328,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -79879,6 +80430,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -80647,6 +81219,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -80739,6 +81312,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -83556,6 +84150,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -83648,6 +84243,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -84086,6 +84702,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 1
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -84187,6 +84804,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -84604,6 +85242,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -84696,6 +85335,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -87249,6 +87909,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -87341,6 +88002,27 @@ MonoBehaviour:
   sk_handtip_r: {fileID: 0}
   skins: []
   thingsToHide: []
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -88201,6 +88883,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -88302,6 +88985,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -97709,6 +98413,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -97810,6 +98515,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -97989,6 +98715,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 1
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -98090,6 +98817,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -102332,6 +103080,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -102433,6 +103182,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -103273,6 +104043,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -103374,6 +104145,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0
@@ -106025,7 +106817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.577
+      value: -3.462
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 73f259ca8a22c6348a4b744fdf5a224a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -111028,6 +111820,7 @@ MonoBehaviour:
   C_LookIK: 0
   C_LookShift: 0
   C_EmotionsOn: 0
+  C_AddGestures: 0
   C_SpeedTest: 0
   C_SpeedConstant: 0
   C_IKTest: 0
@@ -111129,6 +111922,27 @@ MonoBehaviour:
   thingsToHide:
   - {fileID: 1962592475}
   - {fileID: 1065807455}
+  TargetLeftElbow: {fileID: 0}
+  TargetLeftHand: {fileID: 0}
+  TargetRightElbow: {fileID: 0}
+  TargetRightHand: {fileID: 0}
+  BVHLeftShoulder: {fileID: 0}
+  BVHLeftElbow: {fileID: 0}
+  BVHLeftHand: {fileID: 0}
+  BVHRightShoulder: {fileID: 0}
+  BVHRightElbow: {fileID: 0}
+  BVHRightHand: {fileID: 0}
+  ShoulderRotationX: 0
+  ShoulderRotationY: 0
+  ShoulderRotationZ: 0
+  HandRotationX: 0
+  HandRotationY: 0
+  HandRotationZ: 0
+  RefSpine: {fileID: 0}
+  RefSpine1: {fileID: 0}
+  RefSpine2: {fileID: 0}
+  RefNeck: {fileID: 0}
+  RefHead: {fileID: 0}
   ikRatioArray: []
   ikRatioArray_target: []
   playAnimationWithoutTalk: 0

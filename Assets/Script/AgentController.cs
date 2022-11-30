@@ -89,6 +89,7 @@ public class AgentController : MonoBehaviour {
     public bool C_LookIK;
     public bool C_LookShift;
     public bool C_EmotionsOn;
+    public bool C_AddGestures;
 
     [Header("Control Switches 2")]
     public bool C_SpeedTest;
@@ -246,6 +247,41 @@ public class AgentController : MonoBehaviour {
     [Header("BodyParts")]
     public SkinnedMeshRenderer[] skins;
     public GameObject[] thingsToHide;
+
+    [Header("Gesture Hand Parameters")]
+
+    /*public Transform LeftShoulder;
+    public Transform LeftElbow;
+    public Transform LeftHand;*/
+
+    public GameObject TargetLeftElbow;
+    public GameObject TargetLeftHand;
+    public GameObject TargetRightElbow;
+    public GameObject TargetRightHand;
+
+    public Transform BVHLeftShoulder;
+    public Transform BVHLeftElbow;
+    public Transform BVHLeftHand;
+    public Transform BVHRightShoulder;
+    public Transform BVHRightElbow;
+    public Transform BVHRightHand;
+
+    public float ShoulderRotationX = 0f;
+    public float ShoulderRotationY = 0f;
+    public float ShoulderRotationZ = 0f;
+
+    public float HandRotationX = 0f;
+    public float HandRotationY = 0f;
+    public float HandRotationZ = 0f;
+
+    [Header("Gesture Body Parameters")]
+
+    public Transform RefSpine;
+    public Transform RefSpine1;
+    public Transform RefSpine2;
+    public Transform RefNeck;
+    public Transform RefHead;
+
 
 
     #region START
@@ -1760,56 +1796,191 @@ public class AgentController : MonoBehaviour {
 
     private void FingerPass()
     {
-        // finger angles
-        if (fingerChangeTimer <= 0f)
+        // in Gesture Animation
+        if (C_AddGestures)
         {
-            fingerChangeTimer = UnityEngine.Random.Range(1f, 5f);
-            fingerRotationLTarget = UnityEngine.Random.Range(fingerRotationMin, fingerRotationMax);
-            fingerRotationRTarget = UnityEngine.Random.Range(fingerRotationMin, fingerRotationMax);
+            Quaternion rot;
+
+            foreach (Transform child in BVHLeftHand)
+            {
+                Transform secondJoint;
+                Transform thirdJoint;
+                
+
+                secondJoint = child.GetChild(0);
+                thirdJoint = secondJoint.GetChild(0);
+                Vector3 firstVec = child.rotation * Vector3.forward;
+                Vector3 secondVec = secondJoint.rotation * Vector3.forward;
+                Vector3 thirdVec = thirdJoint.rotation * Vector3.forward;
+                float angle = (Vector3.Angle(firstVec, secondVec) + Vector3.Angle(secondVec, thirdVec))/ 2 - 15;
+
+                if (child.name.Contains("Thumb"))
+                {
+                    angle = Vector3.Angle(secondVec, thirdVec);
+                    rot = Quaternion.Euler(0, 0, -angle * 0.5f );
+                    t_LeftThumbDistal.localRotation *= rot;
+                    t_LeftThumbIntermediate.localRotation *= rot;
+                    t_LeftThumbProximal.localRotation *= rot;
+
+                }
+                else if(child.name.Contains("Index"))
+                {
+                    rot = Quaternion.Euler(angle, 0, 0);
+                    t_LeftIndexDistal.localRotation *= rot;
+                    t_LeftIndexIntermediate.localRotation *= rot;
+                    t_LeftIndexProximal.localRotation *= rot;
+                }
+                else if (child.name.Contains("Middle"))
+                {
+                    rot = Quaternion.Euler(angle, 0, 0);
+                    t_LeftMiddleDistal.localRotation *= rot;
+                    t_LeftMiddleIntermediate.localRotation *= rot;
+                    t_LeftMiddleProximal.localRotation *= rot;
+                }
+                else if (child.name.Contains("Ring"))
+                {
+                    rot = Quaternion.Euler(angle, 0, 0);
+                    t_LeftRingDistal.localRotation *= rot;
+                    t_LeftRingIntermediate.localRotation *= rot;
+                    t_LeftRingProximal.localRotation *= rot;
+                }
+                else if (child.name.Contains("Pinky"))
+                {
+                    rot = Quaternion.Euler(angle, 0, 0);
+                    t_LeftLittleDistal.localRotation *= rot;
+                    t_LeftLittleIntermediate.localRotation *= rot;
+                    t_LeftLittleProximal.localRotation *= rot;
+                }
+            }
+
+            foreach (Transform child in BVHRightHand)
+            {
+                Transform secondJoint;
+                Transform thirdJoint;
+
+
+                secondJoint = child.GetChild(0);
+                thirdJoint = secondJoint.GetChild(0);
+                Vector3 firstVec = child.rotation * Vector3.forward;
+                Vector3 secondVec = secondJoint.rotation * Vector3.forward;
+                Vector3 thirdVec = thirdJoint.rotation * Vector3.forward;
+                float angle = (Vector3.Angle(firstVec, secondVec) + Vector3.Angle(secondVec, thirdVec)) / 2 - 15;
+
+                if (child.name.Contains("Thumb"))
+                {
+                    angle = Vector3.Angle(secondVec, thirdVec);
+                    rot = Quaternion.Euler(0, 0, angle * 0.5f);
+                    t_RightThumbDistal.localRotation *= rot;
+                    t_RightThumbIntermediate.localRotation *= rot;
+                    t_RightThumbProximal.localRotation *= rot;
+
+                }
+                else if (child.name.Contains("Index"))
+                {
+                    rot = Quaternion.Euler(angle, 0, 0);
+                    t_RightIndexDistal.localRotation *= rot;
+                    t_RightIndexIntermediate.localRotation *= rot;
+                    t_RightIndexProximal.localRotation *= rot;
+                }
+                else if (child.name.Contains("Middle"))
+                {
+                    rot = Quaternion.Euler(angle, 0, 0);
+                    t_RightMiddleDistal.localRotation *= rot;
+                    t_RightMiddleIntermediate.localRotation *= rot;
+                    t_RightMiddleProximal.localRotation *= rot;
+                }
+                else if (child.name.Contains("Ring"))
+                {
+                    rot = Quaternion.Euler(angle, 0, 0);
+                    t_RightRingDistal.localRotation *= rot;
+                    t_RightRingIntermediate.localRotation *= rot;
+                    t_RightRingProximal.localRotation *= rot;
+                }
+                else if (child.name.Contains("Pinky"))
+                {
+                    rot = Quaternion.Euler(angle, 0, 0);
+                    t_RightLittleDistal.localRotation *= rot;
+                    t_RightLittleIntermediate.localRotation *= rot;
+                    t_RightLittleProximal.localRotation *= rot;
+                }
+            }
+
+            //rot = Quaternion.Euler(restFingerAngle / 4, 0, 0);
+
+            /*t_LeftIndexDistal.localRotation *= rot;
+            t_LeftIndexIntermediate.localRotation *= rot;
+            t_LeftIndexProximal.localRotation *= rot;
+            t_LeftMiddleDistal.localRotation *= rot;
+            t_LeftMiddleIntermediate.localRotation *= rot;
+            t_LeftMiddleProximal.localRotation *= rot;
+            t_LeftRingDistal.localRotation *= rot;
+            t_LeftRingIntermediate.localRotation *= rot;
+            t_LeftRingProximal.localRotation *= rot;
+            t_LeftLittleDistal.localRotation *= rot;
+            t_LeftLittleIntermediate.localRotation *= rot;
+            t_LeftLittleProximal.localRotation *= rot;*/
+
+        }
+        else
+        {
+            // finger angles
+            if (fingerChangeTimer <= 0f)
+            {
+                fingerChangeTimer = UnityEngine.Random.Range(1f, 5f);
+                fingerRotationLTarget = UnityEngine.Random.Range(fingerRotationMin, fingerRotationMax);
+                fingerRotationRTarget = UnityEngine.Random.Range(fingerRotationMin, fingerRotationMax);
+            }
+
+            fingerChangeTimer -= Time.deltaTime;
+            fingerRotationL = (fingerRotationLTarget - fingerRotationL) * 0.01f + fingerRotationL;
+            fingerRotationR = (fingerRotationRTarget - fingerRotationR) * 0.01f + fingerRotationR;
+
+            Quaternion fingIndexL = Quaternion.Euler(fingerRotationL, 0, 0);
+            Quaternion fingIndexR = Quaternion.Euler(fingerRotationR, 0, 0);
+            Quaternion fingThumbL = Quaternion.Euler(0, 0, fingerRotationL * 0.2f);
+            Quaternion fingThumbR = Quaternion.Euler(0, 0, -fingerRotationR * 0.2f);
+            Quaternion fingRestL = Quaternion.Euler(fingerRotationL, 0, 0);
+            Quaternion fingRestR = Quaternion.Euler(fingerRotationR, 0, 0);
+
+            t_LeftIndexDistal.localRotation *= fingIndexL;
+            t_LeftIndexIntermediate.localRotation *= fingIndexL;
+            t_LeftIndexProximal.localRotation *= fingIndexL;
+            t_LeftMiddleDistal.localRotation *= fingRestL;
+            t_LeftMiddleIntermediate.localRotation *= fingRestL;
+            t_LeftMiddleProximal.localRotation *= fingRestL;
+            t_LeftRingDistal.localRotation *= fingRestL;
+            t_LeftRingIntermediate.localRotation *= fingRestL;
+            t_LeftRingProximal.localRotation *= fingRestL;
+            t_LeftThumbDistal.localRotation *= fingThumbL;
+            t_LeftThumbIntermediate.localRotation *= fingThumbL;
+            t_LeftThumbProximal.localRotation *= fingThumbL;
+            t_LeftLittleDistal.localRotation *= fingRestL;
+            t_LeftLittleIntermediate.localRotation *= fingRestL;
+            t_LeftLittleProximal.localRotation *= fingRestL;
+
+            t_RightIndexDistal.localRotation *= fingIndexR;
+            t_RightIndexIntermediate.localRotation *= fingIndexR;
+            t_RightIndexProximal.localRotation *= fingIndexR;
+            t_RightMiddleDistal.localRotation *= fingRestR;
+            t_RightMiddleIntermediate.localRotation *= fingRestR;
+            t_RightMiddleProximal.localRotation *= fingRestR;
+            t_RightRingDistal.localRotation *= fingRestR;
+            t_RightRingIntermediate.localRotation *= fingRestR;
+            t_RightRingProximal.localRotation *= fingRestR;
+            t_RightThumbDistal.localRotation *= fingThumbR;
+            t_RightThumbIntermediate.localRotation *= fingThumbR;
+            t_RightThumbProximal.localRotation *= fingThumbR;
+            t_RightLittleDistal.localRotation *= fingRestR;
+            t_RightLittleIntermediate.localRotation *= fingRestR;
+            t_RightLittleProximal.localRotation *= fingRestR;
         }
 
-        fingerChangeTimer -= Time.deltaTime;
-        fingerRotationL = (fingerRotationLTarget - fingerRotationL) * 0.01f + fingerRotationL;
-        fingerRotationR = (fingerRotationRTarget - fingerRotationR) * 0.01f + fingerRotationR;
 
-        Quaternion fingIndexL = Quaternion.Euler(fingerRotationL, 0, 0);
-        Quaternion fingIndexR = Quaternion.Euler(fingerRotationR, 0, 0);
-        Quaternion fingThumbL = Quaternion.Euler(0, 0, fingerRotationL*0.2f);
-        Quaternion fingThumbR = Quaternion.Euler(0, 0, -fingerRotationR*0.2f);
-        Quaternion fingRestL = Quaternion.Euler(fingerRotationL, 0, 0);
-        Quaternion fingRestR = Quaternion.Euler(fingerRotationR, 0, 0);
+        
 
-        t_LeftIndexDistal.localRotation *= fingIndexL;
-        t_LeftIndexIntermediate.localRotation *= fingIndexL;
-        t_LeftIndexProximal.localRotation *= fingIndexL;
-        t_LeftMiddleDistal.localRotation *= fingRestL;
-        t_LeftMiddleIntermediate.localRotation *= fingRestL;
-        t_LeftMiddleProximal.localRotation *= fingRestL;
-        t_LeftRingDistal.localRotation *= fingRestL;
-        t_LeftRingIntermediate.localRotation *= fingRestL;
-        t_LeftRingProximal.localRotation *= fingRestL;
-        t_LeftThumbDistal.localRotation *= fingThumbL;
-        t_LeftThumbIntermediate.localRotation *= fingThumbL;
-        t_LeftThumbProximal.localRotation *= fingThumbL;
-        t_LeftLittleDistal.localRotation *= fingRestL;
-        t_LeftLittleIntermediate.localRotation *= fingRestL;
-        t_LeftLittleProximal.localRotation *= fingRestL;
+       
 
-        t_RightIndexDistal.localRotation *= fingIndexR;
-        t_RightIndexIntermediate.localRotation *= fingIndexR;
-        t_RightIndexProximal.localRotation *= fingIndexR;
-        t_RightMiddleDistal.localRotation *= fingRestR;
-        t_RightMiddleIntermediate.localRotation *= fingRestR;
-        t_RightMiddleProximal.localRotation *= fingRestR;
-        t_RightRingDistal.localRotation *= fingRestR;
-        t_RightRingIntermediate.localRotation *= fingRestR;
-        t_RightRingProximal.localRotation *= fingRestR;
-        t_RightThumbDistal.localRotation *= fingThumbR;
-        t_RightThumbIntermediate.localRotation *= fingThumbR;
-        t_RightThumbProximal.localRotation *= fingThumbR;
-        t_RightLittleDistal.localRotation *= fingRestR;
-        t_RightLittleIntermediate.localRotation *= fingRestR;
-        t_RightLittleProximal.localRotation *= fingRestR;
+        
     }
 
     #region FLUCTUATE
@@ -2158,6 +2329,16 @@ public class AgentController : MonoBehaviour {
             t_Neck.localRotation *= Quaternion.Slerp(Quaternion.identity, Quaternion.Euler(circularNoise.values[21], circularNoise.values[22], 0), multiplyRotationFactor);
         }
 
+        //Adding Gestures
+
+        if (C_AddGestures)
+        {
+            UpdateGestureIKTargets();
+            UpdateBVHBodyTransforms();
+        }
+
+        //***************
+
         anim.SetBoneLocalRotation(HumanBodyBones.Head, t_Head.localRotation);
         anim.SetBoneLocalRotation(HumanBodyBones.Neck, t_Neck.localRotation);
 
@@ -2458,6 +2639,51 @@ public class AgentController : MonoBehaviour {
                 m.transform.position = anim.GetBoneTransform(HumanBodyBones.LeftHand).position;
             }
         }
+    }
+
+    //Gesture Functions
+
+    private void UpdateGestureIKTargets()
+    {
+        Vector3 ShoulderDir = (BVHLeftElbow.position - BVHLeftShoulder.position);
+        TargetLeftElbow.transform.position = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * ShoulderDir + t_LeftUpperArm.position;
+        TargetLeftHand.transform.position = (BVHLeftHand.position - BVHLeftElbow.position) + TargetLeftElbow.transform.position;
+        TargetLeftHand.transform.rotation = Quaternion.Euler(HandRotationX, HandRotationY, HandRotationZ);
+        TargetLeftHand.transform.rotation = Quaternion.Euler(BVHLeftHand.rotation.eulerAngles.x, BVHLeftHand.rotation.eulerAngles.y, BVHLeftHand.rotation.eulerAngles.z) * TargetLeftHand.transform.rotation;
+
+        ShoulderDir = (BVHRightElbow.position - BVHRightShoulder.position);
+        TargetRightElbow.transform.position = Quaternion.Euler(ShoulderRotationX, -ShoulderRotationY, -ShoulderRotationZ) * ShoulderDir + t_RightUpperArm.position;
+        TargetRightHand.transform.position = (BVHRightHand.position - BVHRightElbow.position) + TargetRightElbow.transform.position;
+        TargetRightHand.transform.rotation = Quaternion.Euler(HandRotationX, -HandRotationY, -HandRotationZ);
+        TargetRightHand.transform.rotation = Quaternion.Euler(BVHRightHand.rotation.eulerAngles.x, BVHRightHand.rotation.eulerAngles.y, BVHRightHand.rotation.eulerAngles.z) * TargetRightHand.transform.rotation;
+    }
+
+    private float waitSec = 0.001f;
+
+    private Quaternion prevSpineRot;
+    private Quaternion prevSpine1Rot;
+    private Quaternion prevSpine2Rot;
+    private Quaternion prevNeckRot;
+    private Quaternion prevHeadRot;
+
+    private void UpdateBVHBodyTransforms()
+    {
+        if (waitSec >= 0f)
+        {
+            waitSec -= Time.deltaTime;
+            prevSpineRot = RefSpine.rotation;
+            prevSpine1Rot = RefSpine1.rotation;
+            prevSpine2Rot = RefSpine2.rotation;
+            prevNeckRot = RefNeck.rotation;
+            prevHeadRot = RefHead.rotation;
+            return;
+        }
+
+        t_Spine.rotation = RefSpine.rotation * Quaternion.Inverse(prevSpineRot) * t_Spine.rotation;
+        t_Chest.rotation = RefSpine1.rotation * Quaternion.Inverse(prevSpine1Rot) * t_Chest.rotation;
+        t_UpperChest.rotation = RefSpine2.rotation * Quaternion.Inverse(prevSpine2Rot) * t_UpperChest.rotation;
+        t_Neck.rotation = RefNeck.rotation * Quaternion.Inverse(prevNeckRot) * t_Neck.rotation;
+        t_Head.rotation = RefHead.rotation * Quaternion.Inverse(prevHeadRot) * t_Head.rotation;
     }
 
     #region NEW ROTATE PASS

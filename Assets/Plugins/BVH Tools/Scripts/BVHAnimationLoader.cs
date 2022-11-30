@@ -58,6 +58,12 @@ public class BVHAnimationLoader : MonoBehaviour {
         return Quaternion.AngleAxis(euler.z, Vector3.forward) * Quaternion.AngleAxis(euler.x, Vector3.right) * Quaternion.AngleAxis(euler.y, Vector3.up);
     }
 
+    private Quaternion fromEulerYXZ(Vector3 euler)
+    {
+        return Quaternion.AngleAxis(euler.y, Vector3.up)  * Quaternion.AngleAxis(euler.x, Vector3.right) * Quaternion.AngleAxis(euler.z, Vector3.forward);
+        //return Quaternion.AngleAxis(euler.z, Vector3.forward) * Quaternion.AngleAxis(euler.x, Vector3.right) * Quaternion.AngleAxis(euler.y, Vector3.up);
+    }
+
     private float wrapAngle(float a) {
         if (a > 180f) {
             return a - 360f;
@@ -217,8 +223,19 @@ public class BVHAnimationLoader : MonoBehaviour {
                 {
                     Debug.Log(node.name + " in load anim: " + eulerBVH.ToString());
                 }
+
+                Quaternion rot;
+
+
+                if (bone.transform.name.Contains("Index") || bone.transform.name.Contains("Thumb") || bone.transform.name.Contains("Middle") || bone.transform.name.Contains("Ring") || bone.transform.name.Contains("Pinky"))
+                {
+                    rot = fromEulerYXZ(eulerBVH);
+                }
+                else
+                {
+                    rot = fromEulerZXY(eulerBVH);
+                }
                 
-                Quaternion rot = fromEulerZXY(eulerBVH);
                 if (blender) {
                     keyframes[3][i].value = rot.x;
                     keyframes[4][i].value = -rot.z;
