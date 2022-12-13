@@ -314,6 +314,44 @@ public class BVHAnimationLoader : MonoBehaviour {
     }
 
 	public void loadAnimation() {
+
+        //*********************************
+        MyBVHTool myTool = new MyBVHTool(bp);
+        myTool.InsertNames("mixamorig:", bp.root);
+        myTool.MergeBone("mixamorig:Spine1", bp.root);
+        myTool.ChangeName("mixamorig:Spine2", "mixamorig:Spine1", bp.root);
+        myTool.ChangeName("mixamorig:Spine3", "mixamorig:Spine2", bp.root);
+        myTool.MergeBone("mixamorig:Neck1", bp.root);
+        myTool.DeleteBone("mixamorig:HeadEnd", bp.root);
+        myTool.DeleteBone("mixamorig:RightForeArmEnd", bp.root);
+        myTool.DeleteBone("mixamorig:RightArmEnd", bp.root);
+        myTool.DeleteBone("mixamorig:LeftForeArmEnd", bp.root);
+        myTool.DeleteBone("mixamorig:LeftArmEnd", bp.root);
+        myTool.DeleteBone("mixamorig:RightToeBaseEnd", bp.root);
+        myTool.DeleteBone("mixamorig:RightLegEnd", bp.root);
+        myTool.DeleteBone("mixamorig:RightUpLegEnd", bp.root);
+        myTool.DeleteBone("mixamorig:LeftToeBaseEnd", bp.root);
+        myTool.DeleteBone("mixamorig:LeftLegEnd", bp.root);
+        myTool.DeleteBone("mixamorig:LeftUpLegEnd", bp.root);
+        myTool.ScaleRoot(bp.root);
+
+        myTool.RotateBone(myTool.FindBone("mixamorig:Hips", bp.root), 8, -6, 0);
+        myTool.RotateBone(myTool.FindBone("mixamorig:LeftUpLeg", bp.root), -16, -3, 177);
+        myTool.RotateBone(myTool.FindBone("mixamorig:RightUpLeg", bp.root), -22, -9, -180);
+        /*myTool.RotateBone(myTool.FindBone("mixamorig:Spine", bp.root), -1, 0, -1);
+        myTool.RotateBone(myTool.FindBone("mixamorig:Spine1", bp.root), -2, -2, 1);
+        myTool.RotateBone(myTool.FindBone("mixamorig:Spine2", bp.root), -1.5f, 1.5f, 0.25f);
+        myTool.RotateBone(myTool.FindBone("mixamorig:LeftShoulder", bp.root), 102, -70, -45);
+        myTool.RotateBone(myTool.FindBone("mixamorig:LeftArm", bp.root), 60, -27, -129);
+        myTool.RotateBone(myTool.FindBone("mixamorig:LeftForeArm", bp.root), -40, -6, -3);
+        myTool.RotateBone(myTool.FindBone("mixamorig:LeftHand", bp.root), 12, -48, 0.4f);
+        myTool.RotateBone(myTool.FindBone("mixamorig:RightShoulder", bp.root), 0, 0, 0);*/
+
+        //myTool.RotateBone(myTool.FindBone("mixamorig:Neck", bp.root), 8, 4, 0);
+
+        myTool.PrintBVH("", bp.root);
+        //********************************8
+
         getTargetAvatar();
 
         if (bp == null) {
@@ -438,40 +476,7 @@ public class BVHAnimationLoader : MonoBehaviour {
             parseFile();
             
             //*******************************
-            MyBVHTool myTool = new MyBVHTool(bp);
-            myTool.InsertNames("mixamorig:", bp.root);
-            myTool.MergeBone("mixamorig:Spine1", bp.root);
-            myTool.ChangeName("mixamorig:Spine2", "mixamorig:Spine1", bp.root);
-            myTool.ChangeName("mixamorig:Spine3", "mixamorig:Spine2", bp.root);
-            myTool.MergeBone("mixamorig:Neck1", bp.root);
-            myTool.DeleteBone("mixamorig:HeadEnd", bp.root);
-            myTool.DeleteBone("mixamorig:RightForeArmEnd", bp.root); 
-            myTool.DeleteBone("mixamorig:RightArmEnd", bp.root); 
-            myTool.DeleteBone("mixamorig:LeftForeArmEnd", bp.root); 
-            myTool.DeleteBone("mixamorig:LeftArmEnd", bp.root); 
-            myTool.DeleteBone("mixamorig:RightToeBaseEnd", bp.root); 
-            myTool.DeleteBone("mixamorig:RightLegEnd", bp.root); 
-            myTool.DeleteBone("mixamorig:RightUpLegEnd", bp.root);
-            myTool.DeleteBone("mixamorig:LeftToeBaseEnd", bp.root);
-            myTool.DeleteBone("mixamorig:LeftLegEnd", bp.root);
-            myTool.DeleteBone("mixamorig:LeftUpLegEnd", bp.root);
-            myTool.ScaleRoot( bp.root);
 
-            myTool.RotateBone(myTool.FindBone("mixamorig:Hips", bp.root), 8, -6, 0);
-            myTool.RotateBone(myTool.FindBone("mixamorig:LeftUpLeg", bp.root), -16, -3, 177);
-            myTool.RotateBone(myTool.FindBone("mixamorig:RightUpLeg", bp.root), -22, -9, -180);
-            /*myTool.RotateBone(myTool.FindBone("mixamorig:Spine", bp.root), -1, 0, -1);
-            myTool.RotateBone(myTool.FindBone("mixamorig:Spine1", bp.root), -2, -2, 1);
-            myTool.RotateBone(myTool.FindBone("mixamorig:Spine2", bp.root), -1.5f, 1.5f, 0.25f);
-            myTool.RotateBone(myTool.FindBone("mixamorig:LeftShoulder", bp.root), 102, -70, -45);
-            myTool.RotateBone(myTool.FindBone("mixamorig:LeftArm", bp.root), 60, -27, -129);
-            myTool.RotateBone(myTool.FindBone("mixamorig:LeftForeArm", bp.root), -40, -6, -3);
-            myTool.RotateBone(myTool.FindBone("mixamorig:LeftHand", bp.root), 12, -48, 0.4f);
-            myTool.RotateBone(myTool.FindBone("mixamorig:RightShoulder", bp.root), 0, 0, 0);*/
-            
-            //myTool.RotateBone(myTool.FindBone("mixamorig:Neck", bp.root), 8, 4, 0);
-
-            myTool.PrintBVH("", bp.root);
             //*******************************
 
             loadAnimation();

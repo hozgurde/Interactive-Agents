@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class RecordPlayer : MonoBehaviour
 {
+    public BVHAnimationController bVHAnimationController;
+
     public LeftIKController TargetHandLeft;
 
     public RightIKController TargetHandRight;
@@ -831,6 +833,9 @@ public class RecordPlayer : MonoBehaviour
                         print(currentRecord.recordClip.name);
                         print (c);
                         print (l);
+
+                        bVHAnimationController.c = c;
+                        bVHAnimationController.l = l;
 
                         TargetHandLeft.c = c;
                         TargetHandLeft.l = l;

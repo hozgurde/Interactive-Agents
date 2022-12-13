@@ -1864,7 +1864,7 @@ public class AgentController : MonoBehaviour {
                 Vector3 firstVec = child.rotation * Vector3.forward;
                 Vector3 secondVec = secondJoint.rotation * Vector3.forward;
                 Vector3 thirdVec = thirdJoint.rotation * Vector3.forward;
-                float angle = (Vector3.Angle(firstVec, secondVec) + Vector3.Angle(secondVec, thirdVec)) / 2 - 15;
+                float angle = (Vector3.Angle(firstVec, secondVec) + Vector3.Angle(secondVec, thirdVec)) / 2 - 10;
 
                 if (child.name.Contains("Thumb"))
                 {
