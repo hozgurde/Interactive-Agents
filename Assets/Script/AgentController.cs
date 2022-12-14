@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DitzelGames.FastIK;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -282,10 +283,21 @@ public class AgentController : MonoBehaviour {
     public Transform RefNeck;
     public Transform RefHead;
 
+    [Header("Smooth Transition")]
+
+    public Transform ShownMainJoint;
+
+    private List<Transform> AllShownJoints;
+
+    public float animationSpeed = 5f;
+
+    public float returnSpeed = 1f;
+
 
 
     #region START
-    void Start() {
+    void Start()
+    {
         audioSource = GetComponent<AudioSource>();
 
         // get the animator
@@ -306,7 +318,7 @@ public class AgentController : MonoBehaviour {
         lineColor2 = Color.red;
         orbColor1 = new Color(0.168f, 0.478f, 0.749f);
         orbColor2 = Color.red;
-        
+
         // find body part distances
         d_upperArm = (anim.GetBoneTransform(HumanBodyBones.LeftUpperArm).position - anim.GetBoneTransform(HumanBodyBones.LeftLowerArm).position).magnitude;
         d_lowerArm = (anim.GetBoneTransform(HumanBodyBones.LeftLowerArm).position - anim.GetBoneTransform(HumanBodyBones.LeftHand).position).magnitude;
@@ -334,11 +346,11 @@ public class AgentController : MonoBehaviour {
         faceController.meshRenderer = body.GetComponentInChildren<SkinnedMeshRenderer>();
         faceController.meshRendererEyes = body_default.GetComponent<SkinnedMeshRenderer>();
         faceController.meshRendererEyelashes = body_eyelashes.GetComponent<SkinnedMeshRenderer>();
-        if(body_beards != null)
+        if (body_beards != null)
         {
             faceController.meshRendererBeards = body_beards.GetComponent<SkinnedMeshRenderer>();
         }
-        if(body_moustaches != null)
+        if (body_moustaches != null)
         {
             faceController.meshRendererMoustaches = body_moustaches.GetComponent<SkinnedMeshRenderer>();
         }
@@ -346,9 +358,9 @@ public class AgentController : MonoBehaviour {
 
         SinkPassInit();
         FluctuatePassInit();
-        
+
         // Create IK Targets
-        LeftHandIK = new GameObject ("LeftHandIK");
+        LeftHandIK = new GameObject("LeftHandIK");
         RightHandIK = new GameObject("RightHandIK");
         BodyIK = new GameObject("BodyIK");
         LeftFootIK = new GameObject("LeftFootIK");
@@ -392,12 +404,12 @@ public class AgentController : MonoBehaviour {
         RightHandIK.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
         o_target_top = Instantiate(sphereBlue);
-        o_target_bottom = Instantiate(sphereBlue); 
+        o_target_bottom = Instantiate(sphereBlue);
         o_target_forward = Instantiate(sphereBlue);
         o_target_back = Instantiate(sphereBlue);
         o_target_left = Instantiate(sphereBlue);
-        o_target_right = Instantiate(sphereBlue);  
-        o_target_center = Instantiate(sphereBlue); 
+        o_target_right = Instantiate(sphereBlue);
+        o_target_center = Instantiate(sphereBlue);
 
         o_target_top.transform.SetParent(gameObject.transform);
         o_target_bottom.transform.SetParent(gameObject.transform);
@@ -552,7 +564,7 @@ public class AgentController : MonoBehaviour {
         sv_upknee_r = Instantiate(MarkToPutBlack); //new GameObject("sv_upknee_r");
 
         float scn = 0.06f;
-        Vector3 scnum = new Vector3(scn,scn,scn);
+        Vector3 scnum = new Vector3(scn, scn, scn);
 
         sv_head_top.transform.localScale = scnum;
         sv_head.transform.localScale = scnum;
@@ -701,7 +713,7 @@ public class AgentController : MonoBehaviour {
         sv_lr_hip.endWidth = lineWidthLow;
         sv_lr_upknee_l.endWidth = lineWidthLow;
         sv_lr_upknee_r.endWidth = lineWidthLow;
-        
+
         sv_lr_head.SetPosition(0, sk_head.position);
         sv_lr_head.SetPosition(1, sk_head_top.position);
         sv_lr_neck.SetPosition(0, sk_neck.position);
@@ -753,9 +765,9 @@ public class AgentController : MonoBehaviour {
 
         SetLinesFor();
 
-        if(SHOW_SKELETON)
+        if (SHOW_SKELETON)
         {
-            foreach(SkinnedMeshRenderer s in skins)
+            foreach (SkinnedMeshRenderer s in skins)
             {
                 s.enabled = false;
             }
@@ -796,7 +808,43 @@ public class AgentController : MonoBehaviour {
         ShowSelfLR(0, false);
         ShowSelfLR(1, false);
         ShowSelfLR(2, false);
+
+
+        //Added For gesture addition
+        PrevBVHLeftElbowPosition = BVHLeftElbow.position;
+        PrevBVHRightElbowPosition = BVHRightElbow.position;
+        PrevBVHLeftShoulderPosition = BVHLeftShoulder.position;
+        PrevBVHRightShoulderPosition = BVHRightShoulder.position;
+        PrevBVHLeftHandPosition = BVHLeftHand.position;
+        PrevBVHRightHandPosition = BVHRightHand.position;
+
+        
+
+        //******************************************
+
+        AllShownJoints = new List<Transform>();
+        AllShownJoints.Add(ShownMainJoint);
+
+        int index = 0;
+
+        Transform curMain;
+
+        while (index < AllShownJoints.Count)
+        {
+            curMain = AllShownJoints[index];
+            index++;
+
+            foreach (Transform child in curMain)
+            {
+                AllShownJoints.Add(child);
+            }
+
+        }
+        BVHMovementControl(false);
+
+        //******************************************
     }
+
     #endregion
 
     static public GameObject GetChildGameObject(GameObject fromGameObject, string withName)
@@ -2107,6 +2155,8 @@ public class AgentController : MonoBehaviour {
 
     List<GameObject> plist = new List<GameObject>();
 
+    bool StartFluctuate = false;
+
     private void LateUpdate()
     {
         if(SHOW_SKELETON)
@@ -2331,10 +2381,38 @@ public class AgentController : MonoBehaviour {
 
         //Adding Gestures
 
-        if (C_AddGestures)
+        if (C_AddGestures )
         {
-            UpdateGestureIKTargets();
-            UpdateBVHBodyTransforms();
+            if (CurrentlyMoving)
+            {
+                UpdateGestureIKTargets();
+                UpdateBVHBodyTransforms();
+            }
+            else
+            {
+                TrackHands();
+            }
+
+
+            PrevBVHLeftHandPosition = BVHLeftHand.position;
+            PrevBVHRightHandPosition = BVHRightHand.position;
+            PrevBVHLeftElbowPosition = BVHLeftElbow.position;
+            PrevBVHRightElbowPosition = BVHRightElbow.position;
+            PrevBVHLeftShoulderPosition = BVHLeftShoulder.position;
+            PrevBVHRightShoulderPosition = BVHRightShoulder.position;
+
+            if(!StartFluctuate && fluctuateTimer > 0)
+            {
+                fluctuateTimer -= Time.deltaTime;
+            }else if(!StartFluctuate && fluctuateTimer <= 0){
+                for( int i = 0; i < AllShownJoints.Count; i++)
+                {
+                    AllShownJoints[i].GetComponent<SmoothTransition>().speed = animationSpeed;
+                    
+                }
+                StartFluctuate = true;
+            }
+
         }
 
         //***************
@@ -2641,21 +2719,94 @@ public class AgentController : MonoBehaviour {
         }
     }
 
+    private void TrackHands()
+    {
+        TargetLeftElbow.transform.position = sk_arm_l.position;
+        TargetRightElbow.transform.position = sk_arm_r.position;
+        TargetLeftHand.transform.position = sk_hand_l.position;
+        TargetRightHand.transform.position = sk_hand_r.position;
+
+    }
+
     //Gesture Functions
+
+    //[Header("BVH Move Control")]
+
+
+    private bool CurrentlyMoving = false;
+
+    public float fluctuateTimerLimit = 3f;
+
+    private float fluctuateTimer = 3f;
+
+    public void BVHMovementControl(bool isInAnim)
+    {
+        if (isInAnim)
+        {
+            CurrentlyMoving = true;
+            sk_hand_l.GetComponent<FastIKFabric>().enabled = true;
+            sk_hand_r.GetComponent<FastIKFabric>().enabled = true;
+
+            for(int i = 0; i < AllShownJoints.Count; i++)
+            {
+                AllShownJoints[i].GetComponent<SmoothTransition>().speed = animationSpeed;
+            }
+
+            StartFluctuate = false;
+        }
+        else
+        {
+            CurrentlyMoving = false;
+            sk_hand_l.GetComponent<FastIKFabric>().enabled = false;
+            sk_hand_r.GetComponent<FastIKFabric>().enabled = false;
+
+            for (int i = 0; i < AllShownJoints.Count; i++)
+            {
+                AllShownJoints[i].GetComponent<SmoothTransition>().speed = returnSpeed;
+            }
+
+            fluctuateTimer = fluctuateTimerLimit;
+            
+        }
+    }
+
+
+    private Vector3 PrevBVHLeftElbowPosition;
+    private Vector3 PrevBVHRightElbowPosition;
+    private Vector3 PrevBVHLeftShoulderPosition;
+    private Vector3 PrevBVHRightShoulderPosition;
+    private Vector3 PrevBVHLeftHandPosition;
+    private Vector3 PrevBVHRightHandPosition;
+
 
     private void UpdateGestureIKTargets()
     {
+
+        Vector3 PrevShoulderDir = (PrevBVHLeftElbowPosition - PrevBVHLeftShoulderPosition);
         Vector3 ShoulderDir = (BVHLeftElbow.position - BVHLeftShoulder.position);
-        TargetLeftElbow.transform.position = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * ShoulderDir + t_LeftUpperArm.position;
-        TargetLeftHand.transform.position = (BVHLeftHand.position - BVHLeftElbow.position) + TargetLeftElbow.transform.position;
+        Vector3 ElbowPos = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * ShoulderDir + t_LeftUpperArm.position;
+        Vector3 PrevElbowPos = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * PrevShoulderDir + t_LeftUpperArm.position;
+        TargetLeftElbow.transform.position += ElbowPos - PrevElbowPos;
+        Vector3 HandPos = (BVHLeftHand.position - BVHLeftElbow.position) + ElbowPos;
+        Vector3 PrevHandPos = (PrevBVHLeftHandPosition - PrevBVHLeftElbowPosition) + PrevElbowPos;
+        TargetLeftHand.transform.position += HandPos - PrevHandPos;
         TargetLeftHand.transform.rotation = Quaternion.Euler(HandRotationX, HandRotationY, HandRotationZ);
         TargetLeftHand.transform.rotation = Quaternion.Euler(BVHLeftHand.rotation.eulerAngles.x, BVHLeftHand.rotation.eulerAngles.y, BVHLeftHand.rotation.eulerAngles.z) * TargetLeftHand.transform.rotation;
 
+
+        PrevShoulderDir = (PrevBVHRightElbowPosition - PrevBVHRightShoulderPosition);
         ShoulderDir = (BVHRightElbow.position - BVHRightShoulder.position);
-        TargetRightElbow.transform.position = Quaternion.Euler(ShoulderRotationX, -ShoulderRotationY, -ShoulderRotationZ) * ShoulderDir + t_RightUpperArm.position;
-        TargetRightHand.transform.position = (BVHRightHand.position - BVHRightElbow.position) + TargetRightElbow.transform.position;
+        ElbowPos = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * ShoulderDir + t_RightUpperArm.position;
+        PrevElbowPos = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * PrevShoulderDir + t_RightUpperArm.position;
+        TargetRightElbow.transform.position += ElbowPos - PrevElbowPos;
+        HandPos = (BVHRightHand.position - BVHRightElbow.position) + ElbowPos;
+        PrevHandPos = (PrevBVHRightHandPosition - PrevBVHRightElbowPosition) + PrevElbowPos;
+        TargetRightHand.transform.position += HandPos - PrevHandPos;
         TargetRightHand.transform.rotation = Quaternion.Euler(HandRotationX, -HandRotationY, -HandRotationZ);
         TargetRightHand.transform.rotation = Quaternion.Euler(BVHRightHand.rotation.eulerAngles.x, BVHRightHand.rotation.eulerAngles.y, BVHRightHand.rotation.eulerAngles.z) * TargetRightHand.transform.rotation;
+
+
+        
     }
 
     private float waitSec = 0.001f;

@@ -6,6 +6,7 @@ public class TraverseChildrenForSmoothLook : MonoBehaviour
 {
     [SerializeField] public Transform mainStartJoint;
     [SerializeField] public Transform shownStartJoint;
+    [SerializeField] public float transitionSpeed = 5f;
     /*[SerializeField] public bool IsInFinger = false;
     [SerializeField] public float ThumbRotX = 0f;
     [SerializeField] public float ThumbRotY = 0f;
@@ -47,6 +48,7 @@ public class TraverseChildrenForSmoothLook : MonoBehaviour
 
             smoothTransition = curShown.gameObject.AddComponent<SmoothTransition>();
             smoothTransition.CopyJoint = curMain;
+            smoothTransition.speed = transitionSpeed;
            
         }
 
