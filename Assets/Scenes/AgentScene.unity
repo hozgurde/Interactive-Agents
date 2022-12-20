@@ -2931,6 +2931,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!137 &47899937 stripped
 SkinnedMeshRenderer:
@@ -3587,6 +3592,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!4 &56760230 stripped
 Transform:
@@ -5416,6 +5426,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &97618781
 AudioSource:
@@ -6381,6 +6396,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &115860073
 GameObject:
@@ -10317,6 +10337,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &229808198
 GameObject:
@@ -21477,6 +21502,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &495577715
 GameObject:
@@ -24445,6 +24475,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &570055087
 GameObject:
@@ -26674,6 +26709,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!4 &618048676 stripped
 Transform:
@@ -27220,6 +27260,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &627382968
 GameObject:
@@ -31259,6 +31304,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 1157451942}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!95 &707016564 stripped
 Animator:
@@ -32762,6 +32812,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1001 &748879164
 PrefabInstance:
@@ -35959,6 +36014,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &766729518
 GameObject:
@@ -36200,6 +36260,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &768626671
 AudioSource:
@@ -41913,6 +41978,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &898954925
 AudioSource:
@@ -43859,6 +43929,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &945799290
 GameObject:
@@ -45415,6 +45490,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &953120577
 AudioSource:
@@ -46254,6 +46334,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &964427950
 GameObject:
@@ -49066,6 +49151,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &984820781
 AudioSource:
@@ -57567,6 +57657,51 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!1 &1157451942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157451943}
+  - component: {fileID: 1157451944}
+  m_Layer: 0
+  m_Name: UnpassableArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1157451943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157451942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.898, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 707016561}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1157451944
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157451942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.18251196
+  m_Height: 0.8534376
+  m_Direction: 1
+  m_Center: {x: 0.0020299852, y: 0.2051535, z: 0.0050549805}
 --- !u!1 &1159018155
 GameObject:
   m_ObjectHideFlags: 0
@@ -59266,6 +59401,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &1176500223
 GameObject:
@@ -60955,6 +61095,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!4 &1211113153 stripped
 Transform:
@@ -62625,6 +62770,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &1248455080
 AudioSource:
@@ -67050,6 +67200,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &1350529486
 GameObject:
@@ -69281,6 +69436,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &1401214530
 GameObject:
@@ -75558,6 +75718,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &1478284069
 AudioSource:
@@ -80660,6 +80825,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &1570157941
 AudioSource:
@@ -81545,6 +81715,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &1579566020
 GameObject:
@@ -84690,6 +84865,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &1644327532
 GameObject:
@@ -85520,6 +85700,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &1657640999
 GameObject:
@@ -88190,6 +88375,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &1685882647
 GameObject:
@@ -89131,6 +89321,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &1713201014
 AudioSource:
@@ -98660,6 +98855,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &1931621084
 AudioSource:
@@ -98965,6 +99165,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &1935741531
 GameObject:
@@ -103297,6 +103502,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!1 &1990896066
 GameObject:
@@ -104257,6 +104467,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &2001626338
 AudioSource:
@@ -111989,6 +112204,11 @@ MonoBehaviour:
   armDown: {x: 0, y: 0, z: 0}
   fingerRotationL: 0
   fingerRotationR: 0
+  fluctuateTimerLimit: 3
+  negativeHandScale: -0.5
+  positiveHandScale: 0.5
+  UnpassableArea: {fileID: 0}
+  elbowTranslationScale: 0.5
   probs: []
 --- !u!82 &2122456206
 AudioSource:

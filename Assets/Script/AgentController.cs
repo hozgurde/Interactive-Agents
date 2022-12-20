@@ -260,6 +260,11 @@ public class AgentController : MonoBehaviour {
     public GameObject TargetRightElbow;
     public GameObject TargetRightHand;
 
+    private Vector3 ActualTargetLeftElbow;
+    private Vector3 ActualTargetLeftHand;
+    private Vector3 ActualTargetRightElbow;
+    private Vector3 ActualTargetRightHand;
+
     public Transform BVHLeftShoulder;
     public Transform BVHLeftElbow;
     public Transform BVHLeftHand;
@@ -841,6 +846,13 @@ public class AgentController : MonoBehaviour {
 
         }
         BVHMovementControl(false);
+
+        //Initialize Actual Target Positions
+
+        ActualTargetLeftElbow = TargetLeftElbow.transform.position + Vector3.zero;
+        ActualTargetRightElbow = TargetRightElbow.transform.position + Vector3.zero;
+        ActualTargetLeftHand = TargetLeftHand.transform.position + Vector3.zero;
+        ActualTargetRightHand = TargetRightHand.transform.position + Vector3.zero;
 
         //******************************************
     }
@@ -2726,6 +2738,11 @@ public class AgentController : MonoBehaviour {
         TargetLeftHand.transform.position = sk_hand_l.position;
         TargetRightHand.transform.position = sk_hand_r.position;
 
+        ActualTargetLeftElbow = TargetLeftElbow.transform.position + Vector3.zero;
+        ActualTargetRightElbow = TargetRightElbow.transform.position + Vector3.zero;
+        ActualTargetLeftHand = TargetLeftHand.transform.position + Vector3.zero;
+        ActualTargetRightHand = TargetRightHand.transform.position + Vector3.zero;
+
     }
 
     //Gesture Functions
@@ -2779,6 +2796,16 @@ public class AgentController : MonoBehaviour {
     private Vector3 PrevBVHRightHandPosition;
 
 
+    [Header("Space Scaling For Hand and Elbow")]
+    public float negativeHandScale = -0.5f;
+    public float positiveHandScale = 0.5f;
+
+    [Header("Hand Body Check")]
+    public GameObject UnpassableArea;
+    public float elbowTranslationScale = 0.5f;
+
+
+
     private void UpdateGestureIKTargets()
     {
 
@@ -2786,10 +2813,30 @@ public class AgentController : MonoBehaviour {
         Vector3 ShoulderDir = (BVHLeftElbow.position - BVHLeftShoulder.position);
         Vector3 ElbowPos = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * ShoulderDir + t_LeftUpperArm.position;
         Vector3 PrevElbowPos = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * PrevShoulderDir + t_LeftUpperArm.position;
-        TargetLeftElbow.transform.position += ElbowPos - PrevElbowPos;
+        ActualTargetLeftElbow += ScaleBetween(openness, 1f + negativeHandScale, 1f + positiveHandScale, -1f, 1f) * (ElbowPos - PrevElbowPos);
+        if (UnpassableArea.GetComponent<Collider>().bounds.Contains(ActualTargetLeftElbow))
+        {
+            TargetLeftElbow.transform.position = UnpassableArea.GetComponent<Collider>().ClosestPoint(ActualTargetLeftElbow);
+        }
+        else
+        {
+            TargetLeftElbow.transform.position = ActualTargetLeftElbow;
+        }
+        //TargetLeftElbow.transform.position += ScaleBetween(openness,1f+negativeHandScale,1f+positiveHandScale,-1f, 1f) * (ElbowPos - PrevElbowPos);
         Vector3 HandPos = (BVHLeftHand.position - BVHLeftElbow.position) + ElbowPos;
         Vector3 PrevHandPos = (PrevBVHLeftHandPosition - PrevBVHLeftElbowPosition) + PrevElbowPos;
-        TargetLeftHand.transform.position += HandPos - PrevHandPos;
+        ActualTargetLeftHand += ScaleBetween(openness, 1f + negativeHandScale, 1f + positiveHandScale, -1f, 1f) * (HandPos - PrevHandPos);
+        if (UnpassableArea.GetComponent<Collider>().bounds.Contains(ActualTargetLeftHand))
+        {
+            TargetLeftHand.transform.position = UnpassableArea.GetComponent<Collider>().ClosestPoint(ActualTargetLeftHand);
+
+            TargetLeftElbow.transform.position += (TargetLeftHand.transform.position - ActualTargetLeftHand) * elbowTranslationScale;
+        }
+        else
+        {
+            TargetLeftHand.transform.position = ActualTargetLeftHand;
+        }
+        //TargetLeftHand.transform.position += ScaleBetween(openness, 1f + negativeHandScale, 1f + positiveHandScale, -1f, 1f) * (HandPos - PrevHandPos);
         TargetLeftHand.transform.rotation = Quaternion.Euler(HandRotationX, HandRotationY, HandRotationZ);
         TargetLeftHand.transform.rotation = Quaternion.Euler(BVHLeftHand.rotation.eulerAngles.x, BVHLeftHand.rotation.eulerAngles.y, BVHLeftHand.rotation.eulerAngles.z) * TargetLeftHand.transform.rotation;
 
@@ -2798,10 +2845,28 @@ public class AgentController : MonoBehaviour {
         ShoulderDir = (BVHRightElbow.position - BVHRightShoulder.position);
         ElbowPos = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * ShoulderDir + t_RightUpperArm.position;
         PrevElbowPos = Quaternion.Euler(ShoulderRotationX, ShoulderRotationY, ShoulderRotationZ) * PrevShoulderDir + t_RightUpperArm.position;
-        TargetRightElbow.transform.position += ElbowPos - PrevElbowPos;
+        ActualTargetRightElbow += ScaleBetween(openness, 1f + negativeHandScale, 1f + positiveHandScale, -1f, 1f) * (ElbowPos - PrevElbowPos);
+        if (UnpassableArea.GetComponent<Collider>().bounds.Contains(ActualTargetRightElbow))
+        {
+            TargetRightElbow.transform.position = UnpassableArea.GetComponent<Collider>().ClosestPoint(ActualTargetRightElbow);
+        }
+        else
+        {
+            TargetRightElbow.transform.position = ActualTargetRightElbow;
+        }
         HandPos = (BVHRightHand.position - BVHRightElbow.position) + ElbowPos;
         PrevHandPos = (PrevBVHRightHandPosition - PrevBVHRightElbowPosition) + PrevElbowPos;
-        TargetRightHand.transform.position += HandPos - PrevHandPos;
+        ActualTargetRightHand += ScaleBetween(openness, 1f + negativeHandScale, 1f + positiveHandScale, -1f, 1f) * (HandPos - PrevHandPos);
+        if (UnpassableArea.GetComponent<Collider>().bounds.Contains(ActualTargetRightHand))
+        {
+            TargetRightHand.transform.position = UnpassableArea.GetComponent<Collider>().ClosestPoint(ActualTargetRightHand);
+
+            TargetRightElbow.transform.position += (TargetRightHand.transform.position - ActualTargetRightHand) * elbowTranslationScale;
+        }
+        else
+        {
+            TargetRightHand.transform.position = ActualTargetRightHand;
+        }
         TargetRightHand.transform.rotation = Quaternion.Euler(HandRotationX, -HandRotationY, -HandRotationZ);
         TargetRightHand.transform.rotation = Quaternion.Euler(BVHRightHand.rotation.eulerAngles.x, BVHRightHand.rotation.eulerAngles.y, BVHRightHand.rotation.eulerAngles.z) * TargetRightHand.transform.rotation;
 
