@@ -132,7 +132,7 @@ public class MyBVHTool
         root.offsetY /= 180f;
         root.offsetY += 0.05f;
         root.offsetZ /= 180f;
-        Debug.Log(root.offsetX + ", " + root.offsetY + ", " + root.offsetZ);
+        //Debug.Log(root.offsetX + ", " + root.offsetY + ", " + root.offsetZ);
 
         for (int i = 0; i < bp.frames; i++)
         {
@@ -175,7 +175,7 @@ public class MyBVHTool
     public void RotateBone(BVHParser.BVHBone bone, float rotX, float rotY, float rotZ)
     {
 
-        Debug.Log(bone.name + ": " + bone.channels[3].values[0] + ", " + bone.channels[4].values[0] + ", " + bone.channels[5].values[0]);
+        //Debug.Log(bone.name + ": " + bone.channels[3].values[0] + ", " + bone.channels[4].values[0] + ", " + bone.channels[5].values[0]);
         for (int i = 0; i < bp.frames; i++)
         {
             if (bone.channels[3].enabled)

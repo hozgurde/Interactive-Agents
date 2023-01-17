@@ -830,6 +830,12 @@ public class RecordPlayer : MonoBehaviour
                             ) /
                             2;
 
+                        if (System.Char.IsDigit(currentRecord.recordClip.name[8]))
+                        {
+                            l += (9 + int.Parse(currentRecord.recordClip.name[8] + "")) / 2;
+                            
+                        }
+
                         print(currentRecord.recordClip.name);
                         print (c);
                         print (l);

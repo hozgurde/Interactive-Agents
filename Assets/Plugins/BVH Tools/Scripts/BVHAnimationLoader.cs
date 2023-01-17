@@ -60,7 +60,7 @@ public class BVHAnimationLoader : MonoBehaviour {
 
     private Quaternion fromEulerYXZ(Vector3 euler)
     {
-        return Quaternion.AngleAxis(euler.y, Vector3.up)  * Quaternion.AngleAxis(euler.x, Vector3.right) * Quaternion.AngleAxis(euler.z, Vector3.forward);
+        return Quaternion.AngleAxis(euler.z, Vector3.forward)  * Quaternion.AngleAxis(euler.y, Vector3.up) * Quaternion.AngleAxis(euler.x, Vector3.right);
         //return Quaternion.AngleAxis(euler.z, Vector3.forward) * Quaternion.AngleAxis(euler.x, Vector3.right) * Quaternion.AngleAxis(euler.y, Vector3.up);
     }
 
@@ -221,7 +221,7 @@ public class BVHAnimationLoader : MonoBehaviour {
                 Vector3 eulerBVH = new Vector3(wrapAngle(values[3][i]), wrapAngle(values[4][i]), wrapAngle(values[5][i]));
                 if(i == 0)
                 {
-                    Debug.Log(node.name + " in load anim: " + eulerBVH.ToString());
+                    //Debug.Log(node.name + " in load anim: " + eulerBVH.ToString());
                 }
 
                 Quaternion rot;
