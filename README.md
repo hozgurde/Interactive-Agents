@@ -1,5 +1,5 @@
-# Conversational-Agent-Framework
-A Conversational Agent Framework with Multi-modal Personality Expression
+# Personality Expression using Co-speech Gesture
+
 
 
 # Using BVH animations on model.
